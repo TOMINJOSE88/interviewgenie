@@ -24,11 +24,8 @@ pipeline {
 
     stage('Run Tests') {
   steps {
-    echo '🧪 Re-installing Jest to fix Linux permissions...'
-    sh 'npm install jest --save-dev'
-
-    echo '✅ Running Jest tests...'
-    sh 'npx jest'
+    echo '✅ Running Jest tests using npm script...'
+    sh 'npm run test --if-present'
   }
 }
 
