@@ -25,7 +25,7 @@ pipeline {
     stage('Run Tests') {
       steps {
         echo '🧪 Running Jest tests...'
-        sh 'npx jest'
+        sh './node_modules/.bin/jest'
       }
     }
 
