@@ -23,11 +23,14 @@ pipeline {
     }
 
     stage('Run Tests') {
-      steps {
-        echo '🧪 Running Jest tests...'
-        sh 'npx --no-install jest'
-      }
-    }
+  steps {
+    echo '🧪 Re-installing Jest to fix Linux permissions...'
+    sh 'npm install jest --save-dev'
+
+    echo '✅ Running Jest tests...'
+    sh 'npx jest'
+  }
+}
 
     stage('Build Docker Image') {
       steps {
