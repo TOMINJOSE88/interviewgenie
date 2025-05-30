@@ -24,10 +24,14 @@ pipeline {
 
     stage('Run Tests') {
   steps {
-    echo '✅ Running Jest tests using npm script...'
+    echo '✅ Giving Jest binary execute permissions...'
+    sh 'chmod +x node_modules/.bin/jest'
+
+    echo '🧪 Running Jest tests using npm script...'
     sh 'npm run test --if-present'
   }
 }
+
 
     stage('Build Docker Image') {
       steps {
