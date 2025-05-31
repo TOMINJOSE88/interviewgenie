@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   tools {
-    nodejs 'Node16' // name you gave above
+    nodejs 'NodeJS_18'
   }
   environment {
     MONGO_URI = credentials('MONGO_URI')
