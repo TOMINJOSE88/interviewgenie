@@ -1,5 +1,9 @@
 pipeline {
-  agent any
+  agent {
+  docker {
+    image 'node:18'
+  }
+}
 
   environment {
     MONGO_URI = credentials('MONGO_URI')
